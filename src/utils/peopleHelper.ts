@@ -10,6 +10,8 @@ export function getVisiblePeople(
 ): Person[] {
   let visiblePeople = [...people];
 
+  const normalizedQuery = query.trim().toLowerCase();
+
   if (sex) {
     visiblePeople = visiblePeople.filter(person => person.sex === sex);
   }
@@ -22,9 +24,7 @@ export function getVisiblePeople(
     });
   }
 
-  if (query) {
-    const normalizedQuery = query.trim().toLowerCase();
-
+  if (normalizedQuery !== '') {
     visiblePeople = visiblePeople.filter(person => {
       const nameMatch = person.name.toLowerCase().includes(normalizedQuery);
 

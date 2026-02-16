@@ -1,7 +1,9 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import cl from 'classnames';
 
 export const Navbar = () => {
+  const location = useLocation();
+
   return (
     <nav
       data-cy="nav"
@@ -22,7 +24,10 @@ export const Navbar = () => {
           </NavLink>
 
           <NavLink
-            to="people"
+            to={{
+              pathname: `/people`,
+              search: location.search,
+            }}
             aria-current="page"
             className={({ isActive }) =>
               cl('navbar-item', { 'has-background-grey-lighter': isActive })
