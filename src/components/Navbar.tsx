@@ -28,7 +28,6 @@ export const Navbar = () => {
               pathname: `/people`,
               search: location.search,
             }}
-            aria-current="page"
             className={({ isActive }) =>
               cl('navbar-item', { 'has-background-grey-lighter': isActive })
             }

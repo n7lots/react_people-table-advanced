@@ -61,7 +61,7 @@ export function getVisiblePeople(
     });
   }
 
-  if (order === 'desc') {
+  if (sort && order === 'desc') {
     visiblePeople.reverse();
   }
 

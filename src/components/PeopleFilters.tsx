@@ -12,8 +12,10 @@ export const PeopleFilters = () => {
   const sex = searchParams.get('sex');
 
   const handleQueryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value.trim();
+
     const nextParams = getSearchWith(searchParams, {
-      query: event.target.value || null,
+      query: value || null,
     });
 
     setSearchParams(nextParams);
